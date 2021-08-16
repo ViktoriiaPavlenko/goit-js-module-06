@@ -186,8 +186,8 @@
 // ======================== lodash
 
 // ------- isEmpty()
-// console.log(_.isEmpty({}));
-// console.log(_.isEmpty({ a: 1 }));
+// console.log(_.isEmpty({})); //true
+// console.log(_.isEmpty({ a: 1 })); //false
 
 
 // ------- get()
@@ -198,15 +198,53 @@
 //     },
 // };
 
-// console.log(_.get(user, 'location.city'));
+// console.log(_.get(user, 'location.city')); //Kyiv
 
-// console.log(user?.location?.city);
+// console.log(user?.location?.city); //Kyiv
 
 
 // ------- union()
-console.log(_.union([1, 2, 3], [3, 4, 5])); //выводит уникальные елементы
+// console.log(_.union([1, 2, 3], [3, 4, 5])); //выводит уникальные елементы - [1, 2, 3, 4, 5]
 
 
 // ------- range()
-console.log(_.range(10, 51));
+// console.log(_.range(1, 5)); //[1, 2, 3, 4]
+// console.log(_.range(1, 5, 2)); //[1, 3] - с шагом 2
 
+
+// ------- sortBy()
+const users = [
+    { user: 'fred', age: 48 },
+    { user: 'barney', age: 36 },
+    { user: 'fred', age: 40 },
+    { user: 'barney', age: 34},
+]
+console.log(_.sortBy(users, ['user', 'age'])); //отсортирует по имени и по возрасту - 
+// 0: { user: "barney", age: 34 }
+// 1: {user: "barney", age: 36}
+// 2: {user: "fred", age: 40}
+// 3: {user: "fred", age: 48}
+
+
+// ------- sum()
+console.log(_.sum([1, 2, 3, 4, 5, 6])); //сумма чисел - 21
+
+
+// ------- sumBy() - для массива обьектов
+const players = [
+    { id: 'player-1', name: 'Mango', timePlayed: 310, online: false },
+    { id: 'player-2', name: 'Poly', timePlayed: 470, online: true },
+    { id: 'player-3', name: 'Aiwi', timePlayed: 230, online: true },
+    { id: 'player-4', name: 'Ajax', timePlayed: 150, online: false },
+    { id: 'player-5', name: 'Chelsey', timePlayed: 80, online: true },
+];
+console.log(_.sumBy(players, player => player.timePlayed));  //1240 - сумма всех timePlayed
+
+
+// ------- minBy() и maxBy()
+console.log(_.minBy(players, player => player.timePlayed)); // - игрок с самым низким timePlayed - {id: "player-5", name: "Chelsey", timePlayed: 80, online: true}
+
+
+// ------- camelCase(), capitalize(),  kebabCase(),
+// ------- lowerCase(), upperCase()
+console.log(_.kebabCase(' a b c ')); //a-b-c

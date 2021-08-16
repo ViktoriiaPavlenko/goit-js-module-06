@@ -8,7 +8,7 @@
 // };
 
 // var arr = stringToarray(str);
-
+// console.log(arr);
 // document.writeln(arr); // ['Каждый', 'охотник', 'желает', 'знать']
 
 
@@ -29,15 +29,13 @@
 
 // var vegetables = ['Капуста', 'Репа', 'Редиска', 'Морковка'];
 // function arrayClone(arr) {
-
-// Ваш код
 //   return arr.slice()   // 1й вариант
-    // return [...arr]    // 2й вариант
-//   let arr2 = []           // 3й вариант
-//     for (let i = 0; i < arr.length; i += 1) {
-//         arr2.push(arr[i])
-//     }
-//     return arr2;
+//     // return [...arr]    // 2й вариант
+// //   let arr2 = []           // 3й вариант
+// //     for (let i = 0; i < arr.length; i += 1) {
+// //         arr2.push(arr[i])
+// //     }
+// //     return arr2;
 // }
 
 // var arr1 = arrayClone(vegetables);
@@ -152,7 +150,6 @@
 //         }
 //     }
 //     return newStr
-
 // }
 
 // // document.writeln(change_register(str));
@@ -166,8 +163,8 @@
 // число num в качестве аргумента и вставляет двоеточие(: )
 // между двумя нечетными числами.Например, если вводится
 // число 55639217, то на выход должно быть 5: 563: 921: 7.
-
 // const num = prompt('Введите число', 55);
+
 
 // function colonOdd(num) {
 //     let str = String(num)
@@ -208,7 +205,7 @@
 
 // 2й вариант
 // let a = new Set([1, 1, 2, 2, 3])
-// console.log(a);
+// // console.log(a);
 
 // function removeDuplicates(arr) {
 //     return [...new Set(arr)]
@@ -236,7 +233,7 @@
 //     }
 //   return newStr + str
 // };
-// console.log(zeros(33, 4));
+// console.log(zeros(145, 5));
 // document.writeln(zeros(145, 5)); // -00145
 // document.writeln(zeros(33, 4));  // +0033 
 // document.writeln(zeros(33, 4));       // 0033
@@ -256,7 +253,7 @@
 //     return newStr
 // }
 
-// document.writeln(repeatStr('Hello!', 3)); // Hello!Hello!Hello!
+// // document.writeln(repeatStr('Hello!', 3)); // Hello!Hello!Hello!
 // console.log(repeatStr('Hello!', 3));
 
 
@@ -322,25 +319,6 @@
 // 0 0 1 0
 // 0 0 0 1
 
-
-// function matrix(n) {
-//     let arr = []
-//     for (let i = 0; i < n; i += 1) {
-//         for (let j = 0; j < n; j += 1){
-//             if (i === j) {
-//                 arr[i][j].push(1)
-//             } else {
-//                 arr[i][j].push(0)
-//             }
-//         }
-//     }
-//   return arr
-// };
-
-// matrix(4);
-// console.log(matrix(4));
-
-
 // function matrix(n) {
 //     let arr = []
 //     for (let i = 0; i < n; i += 1) {
@@ -363,21 +341,22 @@
 // 17
 
 // Напишите функцию insensitive_search(str1, str2),
-//     которая осуществляет поиск подстроки str2 в
+// которая осуществляет поиск подстроки str2 в
 // строкеstr1 без учёта регистра символов.
 
-function insensitive_search(str1, str2) {
-    let arr = str1.toLowerCase().split(' ').includes(str2.toLowerCase())
-    return arr
-    // 2ий вариант 
-    // for (let i = 0; i < arr.length; i += 1) {
-    //     if (arr[i].toLowerCase() === str2.toLowerCase()) {
-    //         return true
-    //     } 
-    // }
-    // return false
-};
-console.log(insensitive_search('Изучаю JavaScript', 'javascript'));
+// function insensitive_search(str1, str2) {
+    // let arr = str1.toLowerCase().split(' ').includes(str2.toLowerCase())
+    // return arr
+    // 2ий вариант
+//     let arr = str1.split(' ')
+//     for (let i = 0; i < arr.length; i += 1) {
+//         if (arr[i].toLowerCase() === str2.toLowerCase()) {
+//             return true
+//         } 
+//     }
+//     return false
+// };
+// console.log(insensitive_search('Изучаю JavaScript', 'javascript'));
 // document.writeln(insensitive_search('Изучаю JavaScript', 'javascript')); 
 // // Соответствует 
 // document.writeln(insensitive_search('Изучаю JavaScript', 'javascriptS'));
@@ -391,14 +370,14 @@ console.log(insensitive_search('Изучаю JavaScript', 'javascript'));
 // файла(подстрока после последнего символа "\" ) из полного 
 // пути к файлу.
 
-var pathname = "/home/user/dir/file.txt";
+// var pathname = "/home/user/dir/file.txt";
 
-function path(pathname) { 
-//    let arr = pathname.split('/').slice(-1)
-    let arr = pathname.split('/').pop()
-   return arr
-};
-console.log(path(pathname));
+// function path(pathname) { 
+// //    let arr = pathname.split('/').slice(-1)
+//     let arr = pathname.split('/').pop()
+//    return arr
+// };
+// console.log(path(pathname));
 // document.writeln(path(pathname)); // file.txt
 
 
