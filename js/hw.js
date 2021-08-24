@@ -270,6 +270,11 @@
 // const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
 // const bookByAuthor = books.find((book) => book.author === AUTHOR);
 
+// ИЛИ
+// const bookWithTitle = books.find(({ title }) => title === BOOK_TITLE)
+// const bookByAuthor = books.find(({ author }) => author === AUTHOR)
+
+
 
 // 25
 // const getUserWithEmail = (users, email) => {
