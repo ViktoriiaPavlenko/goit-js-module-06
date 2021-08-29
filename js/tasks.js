@@ -93,11 +93,14 @@
 // з них. Додатково перевіряти чи це взагалі числа
 
 // function getTheBiggestNumber() {
+
 //     let number1 = prompt('Enter your first number')
 //     let number2 = prompt('Enter your second number')
 //     let number3 = prompt('Enter your third number')
-
-//     return Math.max(number1, number2, number3)
+    
+//     if (Number.isInteger(number1) && Number.isInteger(number2) && Number.isInteger(number3)) {
+//       return Math.max(number1, number2, number3)
+//     }
 // }
 // console.log(getTheBiggestNumber());
 
@@ -147,61 +150,68 @@
 // var userChoice = prompt("Rock, Paper, or Scissors");
 // var computerChoice = Math.random();
 
+// let rock = "rock"
+//     let paper = "paper"
+// let scissors = "scissors"
+    
 // var compchoice = function ()
-// {
+// { 
 //     if (computerChoice <= 0.34)
 //     {
-//         return computerChoice = "Rock";
+//         return computerChoice = rock;
 //     } 
 //     else if(computerChoice <= 0.67 && computerChoice >= 0.35)
 //     {
-//         return computerChoice = "Paper";
+//         return computerChoice = paper;
 //     }
 //     if (computerChoice >= 0.68)
 //     {
-//         return computerChoice = "Scissors";
+//         return computerChoice = scissors;
 //     }
 
 // };
 
 // var compare = function (choice1, choice2)
 // {
-//     if (computerChoice === "Rock" || "Paper" || "Scissors")
+//     choice1 = choice1.toLowerCase()
+//     choice2 = choice2.toLowerCase()
+    
+//     if (computerChoice === rock || paper || scissors)
 //     {
 //         if (choice1 === choice2)
 //         {
 //             return alert("The result is a tie!");
 //         }
 
-//         else if (choice1 === "Rock")
+//         else if (choice1 === rock)
 //         {
-//             if (choice2 === "Scissors")
+//             if (choice2 === scissors)
 //             {
 //                 return alert("Rock crushes Scissors!");
 //             }
-//             else if (choice2 === "Paper")
+//             else if (choice2 === paper)
 //             {
 //                 return alert("Paper covers Rock!");
 //             }
 //         }
-//         if (choice1 === "Scissors")
+//         if (choice1 === scissors)
 //         {
-//             if (choice2 === "Rock")
+//             if (choice2 === rock)
 //             {
 //                 return alert("Rock crushes Scissors!");
 //             }
-//             else if (choice2 === "Paper")
+//             else if (choice2 === paper)
 //             {
 //                 return alert("Scissors cuts Paper!");
 //             }
 //         }
-//         else if (choice1 === "Paper")
+//         else if (choice1 === paper)
 //         {
-//             if (choice2 === "Rock")
+//             if (choice2 === rock)
 //             {
 //                 return alert("Paper covers Rock!");
 //             }
-//             else if (choice2 === "Scissors")
+//             else if (choice2 === scissors)
 //             {
 //                 return alert("Scissors cuts Paper!");
 //             }
@@ -380,4 +390,19 @@
 //   var i = arr.length / 2;
 //   return i % 1 == 0 ? (arr[i - 1] + arr[i]) / 2 : arr[Math.floor(i)];
 // }
-// console.log(median([3, 6, 10, 15, 20, 99]) );
+// console.log(median([3, 6, 10, 16, 20, 99]) );
+
+// 2й вариант
+// function median(arr){
+//     arr.sort(function (a, b) { return a - b; });
+//     let result = 0
+//     let a = arr.length / 2
+//     if (arr.length % 2 === 0) {
+        
+//         result = (arr[a - 1] + arr[a]) / 2
+//     } else {
+//         result = arr[Math.floor(a)]
+//     }
+//     return result
+// }
+// console.log(median([1, 2, 3, 4, 5]) );
