@@ -1,368 +1,377 @@
-// HW
-/*-----------------Задача №1------------------*/
-//Теория
-//Объекты могут быть использованы для построения различных структур данных.
-//Часто встречающаяся структура – список (не путайте с массивом).
-//Список – связанный набор объектов, где первый объект содержит 
-// ссылку на второй, второй – на третий, и т.п.
+// 1
+// var str = 'Каждый охотник желает знать';
+// function stringToarray(str) {
 
-// const list = {
-//   value: 1,
-//   rest: {
-//     value: 2,
-//     rest: {
-//       value: 3,
-//       rest: null,
-//     },
-//   },
+// // Ваш код
+//     return str.split(' ')
+
 // };
 
-//Списки удобны тем, что они могут делиться частью своей структуры.
-//Например, можно сделать два списка, {value: 0, rest: list} и 
-// { value: -1, rest: list }, где list – это ссылка на ранее
-//объявленную переменную. Это два независимых списка, при этом 
-// у них есть общая структура list,
-//которая включает три последних элемента каждого из них. 
-// Кроме того, оригинальный список также сохраняет свои свойства
-//как отдельный список из трёх элементов.
+// var arr = stringToarray(str);
+// console.log(arr);
+// document.writeln(arr); // ['Каждый', 'охотник', 'желает', 'знать']
 
-//-------------Задание
-//Напишите функцию arrayToList, которая строит такую структуру, 
-// получая в качестве аргумента[1, 2, 3]
+
+// 2
+// var str = 'Каждый охотник желает знать';
+// function delete_characters(str, length) {
+
+// // Ваш код
+//   return str.slice(0, length)
+// };
+
+// // document.writeln(delete_characters(str, 7));
+
+// console.log(delete_characters(str, 7));
+
+// 3
+// Напишите функцию copyArr(arr), которая копирует массив не изменяя иригинал.
+
+// var vegetables = ['Капуста', 'Репа', 'Редиска', 'Морковка'];
+// function arrayClone(arr) {
+//   return arr.slice()   // 1й вариант
+//     // return [...arr]    // 2й вариант
+// //   let arr2 = []           // 3й вариант
+// //     for (let i = 0; i < arr.length; i += 1) {
+// //         arr2.push(arr[i])
+// //     }
+// //     return arr2;
+// }
+
+// var arr1 = arrayClone(vegetables);
+
+// // document.writeln(arr1); // ['Капуста', 'Репа', 'Редиска', 'Морковка']
+// console.log(arr1);
+// console.log(arr1 === vegetables);
+
+
+
+// 4
+// Напишите код, который преобразовывает и объединяет все
+// элементы массива в одно строковое значение.Элементы
+// массива будут разделены запятой.Получите результат
+// двумя разными методами.
+
+// var vegetables = ['Капуста', 'Репа', 'Редиска', 'Морковка'];
 
 // 1й вариант
-// const arrayToList = (arr) => { 
-//     let list = {
-//         value: arr[0],
-//         rest: nestObject()
-//     };
-//     function nestObject() {
-//         let rest = {};
-//         arr.shift();
-//         const length = arr.length;
-//         if (length == 1) {
-//             rest.value = arr[0];
-//             rest.rest = null;
-//         } else {
-//             rest.value = arr[0];
-//             rest.rest = nestObject();
-//         }
-//         return rest;   
-//     }
-//     return list;
-// };
-
-// console.log(arrayToList([1, 2, 3]));
+// vegetables.join(',')
+// console.log(vegetables.join(','));
 
 // 2й вариант
-
-// function arrayToList(params) {
-//   let objectList = null;
-//   params = params.reverse();
-//   for (let i = 0; i < params.length; i += 1) {
-//     const element = params[i];
-//     objectList = { value: element, rest: objectList };
-//   }
-//   return objectList;
+// let str = ""
+// let str1 = ","
+// for (let i = 0; i < vegetables.length; i += 1) {
+//     if (i === (vegetables.length - 1)) {
+//         str1 = ''
+//     }
+//     str += vegetables[i] + str1
 // }
-
-// console.log(arrayToList([1, 2, 3, 8, 125, 22, 0]));
-
+// console.log(str);
 
 
-/*-----------------Задача №2------------------*/
-//Оператор == сравнивает переменные объектов, проверяя, ссылаются ли они на один объект. 
-//Но иногда полезно было бы сравнить объекты по содержимому. 
-//Напишите функцию deepEqual, которая принимает два значения и возвращает
-// true, только если это два одинаковых значения или это объекты, свойства
-// которых имеют одинаковые значения, если их сравнивать рекурсивным 
-// вызовом deepEqual.Чтобы узнать, когда сравнивать величины через ===, 
-// а когда – объекты по содержимому, используйте оператор typeof. 
-// Если он выдаёт “object” для обеих величин, значит нужно делать глубокое 
-// сравнение. Не забудьте об одном дурацком исключении, случившемся 
-// из - за исторических причин: “typeof null” тоже возвращает “object”.
-// Решите задачу без использования метода JSON.stringify()
+// 5
+// Напишите функцию insert_dash(str), которая принимает
+// строку str в качестве аргумента и вставляет тире(-)
+// между словами.При этом все символы строки необходимо
+// перевести в верхний регистр.
 
-// var obj = {here: {is: "an"}, object: 2};
-// console.log(deepEqual(obj, obj));
-// // → true
-// console.log(deepEqual(obj, {here: 1, object: 2}));
-// // → false
-// console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
-// // → true
+// var str = "HTML JavaScript PHP";
 
-// var obj = { here: { is: "an" }, object: 2 };
-
-// const deepEqual = function (x, y) {
-//   if ((typeof x == "object" && x != null) && (typeof y == "object" && y != null)) {
-//     if (Object.keys(x).length != Object.keys(y).length)
-//       return false;
-//         for (var prop in x) {
-//             if (y.hasOwnProperty(prop))
-//             return deepEqual(x[prop], y[prop]);
-//         }
-//     }
-//   else if (x !== y)
-//     return false;
-//   else
-//     return true;
-// }
-
-// console.log(deepEqual(obj, obj));
-// console.log(deepEqual(obj, { here: 1, object: 2 }));
-// console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
-
-
-// ----- 1
-// Заполнить массив нулями, кроме первого и последнего элементов, 
-// которые должны быть равны единице.
-
-// function createArray(num) {
-//     const array = []
-//     for (let i = 0; i < num; i += 1) {
-//         if (i === 0 || i === num - 1) array.push(1)
-//         else array.push(0) 
-//     }
-//     return array
-// }
-// console.log(createArray(9));
-
-
-// ----- 2
-// Заполнить массив нулями и единицами, при этом данные значения
-// чередуются, начиная с нуля.
-
-// function createArray(num) {
-//     const array = []
-//     for (let i = 0; i < num; i += 1) {
-//         if (i % 2 === 0) {
-//             array.push (0)
-//         } else {
-//             array.push(1)
-//         }
-//     }
-//     return array
-// }
-// console.log(createArray(5));
-
-// ----- 3
-// Заполнить массив последовательными нечетными числами, 
-// начиная с единицы.
-
-// function createArray(num) {
-//     const array = []
-//     for (let i = 0; i <= num; i += 1) {
-//         if (i % 2 !== 0) {
-//             array.push(i)
-//         }
-//     }
-//     return array 
-// }
-// console.log(createArray(5));
-
-// ----- 4
-// Сформировать убывающий массив из чисел, 
-// которые делятся на 3.
-
-// 1 вариант
-// function createArray(num) {
-//     const array = []
-//     for (let i = num; i > 0; i -= 1) {
-//         if (i % 3 === 0) {
-//            array.push(i)
-//        }
-//     }
-//     return array
-// }
-// console.log(createArray(10));
-
-// 2 вариант
-// function createArray(num) {
-//     const array = []
-//     for (let i = 1; i < num; i += 1) {
-//         if (i % 3 === 0) {
-//            array.push(i)
-//        }
-//     }
-//     return array.reverse()
-// }
-// console.log(createArray(10));
-
-
-// ----- 5
-// Напишите функцию getSubstr(str, char, pos), которая
-// озвращает часть строки, расположенную после или до
-// указанного символа char в зависимости от параметра
-// pos.
-
-// var str = 'Астрономия — Наука о небесных телах';
-
-// function getSubstr(str, char, pos) {
-//     const array = str.split(char)
-//     if (pos === "before") {
-//         return array[0]
-//     } else {
-//         return array[1]
-//     }
-// };
-// console.log(getSubstr(str, '—','after'));
-// document.writeln(getSubstr(str, '—','after')); // Наука о небесных телах
-// document.writeln(getSubstr(str, 'Н','before')); // Астрономия —
-
-
-// ----- 6
-// Создайте метод объекта String endsWith(), 
-// который сравнивает подстроку str1 с окончанием
-// исходной строки str и определяет заканчивается
-// ли строка символами подстроки.
-
-// var str = "Каждый охотник желает знать"; 
-// var str1 = "скрипт";
-// var str2 = "знать";
-
-// 1й вариант
-// String.prototype.endsWith = function(substring) {
-//     let newArray = this.split(" ") 
-//     return (newArray[newArray.length - 1] === substring) 
-// };
-// console.log(str.endsWith(str1));
-// console.log(str.endsWith(str2));
-
-// 2й вариант
-// String.prototype.endsWith = function(substring) {
-//     let newArray = this.split(" ") 
-//     return (newArray.length - 1 === newArray.indexOf(substring)) 
-// };
-// console.log(str.endsWith(str1));
-// console.log(str.endsWith(str2));
-
-// document.writeln(str.endsWith(str1)); // false
-// document.writeln(str.endsWith(str2)); // true
-
-
-// ----- 7
-// Напишите функцию insert(str, substr, pos), которая вставляет
-// подстроку substr в указанную позицию pos строки str.
-// По умолчанию подстрока вставляется в начало строки.
-
-// function insert(str, substr, pos = 0) {
-//     const array = str.split("")
-//     if (substr) {
-//         array.splice(pos, 0, substr)
-//     }
-//     return array.join('') 
-// };
-// console.log(insert('Казнить нельзя'));
-// console.log(insert('Казнить нельзя', 'Помиловать '));
-// console.log(insert('Казнить нельзя', 'Помиловать ', 8));
-
-// document.writeln(insert('Казнить нельзя')); // Казнить нельзя
-// document.writeln(insert('Казнить нельзя', 'Помиловать ')); // Помиловать Казнить нельзя 
-// document.writeln(insert('Казнить нельзя', 'Помиловать ', 8)); // Казнить Помиловать нельзя
-
-
-// ----- 8
-// Напишите функцию limitStr(str, n, symb), которая 
-// обрезает строку, если она длиннее указанного 
-// количества символов n.Усеченная строка должна 
-// заканчиваться троеточием «...» (если не задан 
-// параметр symb) или заданным символом symb.
-
-// function limitStr(str, n, symb) {
-//     let newStr = str
-//     if (str.length > n && n) {
-//         const newSymbol = symb ? symb : "..."
-//         newStr = str.slice(0, n) + newSymbol
-//     }
-//     return  newStr
-// };
-
-// console.log(limitStr('Каждый охотник желает знать.'));
-// console.log(limitStr('Каждый охотник желает знать.',17));
-// console.log(limitStr('Каждый охотник желает знать.',22,'!'));
-
-// document.writeln(limitStr('Каждый охотник желает знать.')); // Каждый охотник желает знать.
-// document.writeln(limitStr('Каждый охотник желает знать.',17)); // Каждый охотник...
-// document.writeln(limitStr('Каждый охотник желает знать.',22,'!')); // Каждый охотник желает!
-
-
-// ----- 9
-// Напишите функцию cutString(str, n), которая делит 
-// строку на подстроки, состоящие из n символов.
-
-// function cutString(str, n) {
-//     const newArray = []
-//     for (let i = 0; i < str.length; i += n) {
-//        newArray.push(str.slice(i, i + n))
-//     }
-//     return newArray
-// };
-
-// console.log(cutString('наслаждение',3));
-// document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
-
-
-// ----- 10
-// Напишите функцию count(str, stringsearch), которая возвращает 
-// количество символов stringsearch в строке str.
-
-// var symb = "о", str = "Астрономия это наука о небесных объектах";
-// function count(str, symb) {
-//     let array = str.split("")
-//     let result = 0
-//     for (const el of array) {      
-//         if (el === symb) {
-//             result += 1
-//         }
-//     }
-//     return result
-// };
-// console.log(count(str, symb));
-// document.writeln(count(str, symb)) // 5
-
-// ------ 11
-// Напишите функцию alphabetize(str), которая возвращает строку, 
-// отсортировав её символы в алфавитном порядке.
-
-// function alphabetize(str) {
-//     let array = str.split("")
-//     return array.sort().join("")
-// };
-// console.log(alphabetize("Europe"));
-// document.writeln(alphabetize("Europe")); // Eeopru
-
-// let array = [1, 5, 333, 2222]
-// // console.log(array.sort());
-// console.log(array.sort((a, b) => {
-//  return a - b
-// }));
-
-
-// ----- 12
-// Напишите функцию unique_letters(str), которая возвращает строку, 
-// оставив в ней только уникальные символы, т.е.встречающиеся 
-// в строке один раз.
-
-// function unique_letters(str) {
-//     const newArray = str.split("")
-//     return newArray.filter((el, idx, arr) => 
-//         arr.lastIndexOf(el) === arr.indexOf(el)
-//     )
-// };
-// console.log(unique_letters('anaconda'));
-// document.writeln (unique_letters('anaconda')); // c,o,d
-
-
-// ----- 13
-// Напишите функцию removeDuplicate(str), которая 
-// возвращает строку, очищенную от слов - дупликатов,
-// т.е.каждое слово должно повторяться не более одного 
-// раза.
-
-var str = "вишня, груша, слива, груша";
-
-function removeDuplicate(str) {
+// function insert_dash(str) {
+// // Ваш код
+//     str = str.toUpperCase()
+//     let a = str.split(' ')
+//     return a.join('-')
     
-};
+// }
 
-// document.writeln (removeDuplicate(str)); // вишня, груша, слива
+// // document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
+// console.log(insert_dash(str));
+
+
+// 6
+// Напишите функцию, которая принимает строку в качестве
+// аргумента и преобразует регистр первого символа строки
+// из нижнего регистра в верхний.
+
+// var str = "string not starting with capital";  
+ 
+// function cursive_letter(str) {
+//     let b = str[0].toUpperCase()
+//     let c = str.slice(1)
+//     return b + c
+// }
+
+// // document.writeln(cursive_letter(str)); // "String not starting with capital"
+// console.log(cursive_letter(str));
+
+
+// 7
+// Напишите функцию capitalize(str), которая возвращает строку,
+// в которой каждое слово начинается с заглавной буквы.
+
+// var str = "каждый охотник желает знать";  
+ 
+// function capitalize(str) {
+//     let a = str.split(' ')
+//     let array = []
+//     for (let i = 0; i < a.length; i += 1) {
+//        let b = a[i][0].toUpperCase()
+//        let c = a[i].slice(1) 
+//        array.push(b + c)
+//     }
+//   return array.join(' ')
+// }
+
+// // document.writeln(capitalize(str)); // "Каждый Охотник Желает Знать"
+// console.log(capitalize(str));
+
+
+// 8
+
+// Напишите функцию change_register(str), которая принимает
+// в качестве аргумента строку и и заменяет регистр каждого
+// символа на противоположный.Например, если вводится «КаЖдЫй
+// ОхОтНиК», то на выходе должно быть «кАжДыЙ оХоТнИк».
+
+// var str = "КаЖдЫй ОхОтНиК жЕлАеТ зНаТь";  
+ 
+// function change_register(str) {
+//     let newStr = ''
+//     for (let i = 0; i < str.length; i += 1) {
+//         let a = str[i]
+        
+//         if (a.toUpperCase() === a) {
+
+//             newStr += a.toLowerCase()
+//         } else {
+//             newStr += a.toUpperCase()
+//         }
+//     }
+//     return newStr
+// }
+
+// // document.writeln(change_register(str));
+// console.log(change_register(str));
+
+
+// 9
+
+// Пользователь вводит многозначное число через prompt.
+// Напишите функцию colonOdd(num), которая принимает
+// число num в качестве аргумента и вставляет двоеточие(: )
+// между двумя нечетными числами.Например, если вводится
+// число 55639217, то на выход должно быть 5: 563: 921: 7.
+// const num = prompt('Введите число', 55);
+
+
+// function colonOdd(num) {
+//     let str = String(num)
+//     let result = [str[0]]
+//     for (let i = 1; i < str.length; i += 1) {
+//         if (str[i] % 2 !== 0 && str[i - 1] % 2 !== 0) {
+//             result.push( ':' + str[i]) 
+//         } else {
+//             result.push(str[i]) 
+//         }
+//     }
+//   return result.join('')
+// }
+
+// // document.writeln(colonOdd(num)); // 5:5
+// console.log(colonOdd(55639217));
+
+
+// 10
+
+// Напишите функцию removeDuplicates(arr), которая возвращает
+// массив, в котором удалены повторяющиеся элементы из
+// массива arr(игнорируйте чувствительность к регистру).
+
+// var arr = ["php", "php", "css", "css",
+//   "script", "script", "html", "html", "java"
+// ];
+// 1й вариант
+// function removeDuplicates(arr) {
+//     let ret = []
+//     for (let i = 0; i < arr.length; i += 1) {
+//         if (!ret.includes(arr[i])) {
+//             ret.push(arr[i])
+//         }
+//     }
+//     return ret
+// }
+
+// 2й вариант
+// let a = new Set([1, 1, 2, 2, 3])
+// // console.log(a);
+
+// function removeDuplicates(arr) {
+//     return [...new Set(arr)]
+// }
+
+
+// // // document.writeln(result);
+// console.log(removeDuplicates(arr));
+
+
+// 11
+
+// Напишите функцию zeros(num, len), которая дополняет нулями
+// до указаной длины числовое значение с дополнительным
+// знаком «+» или « -« в зависимости от передаваемого аргумента.
+
+// function zeros (num, len) {
+//     let str = String(num)
+//     let result = len - str.length
+//     let newStr = ''
+//     for (let i = 0; i < result; i += 1) {
+//         newStr += '0'
+//     }
+//   return newStr + str
+// };
+// console.log(zeros(145, 5));
+// document.writeln(zeros(145, 5)); // -00145
+// document.writeln(zeros(33, 4));  // +0033 
+// document.writeln(zeros(33, 4));       // 0033
+
+
+// 12
+
+// Напишите функцию repeatStr(str, n), которая вовращает
+// строку повторяемую определённое количество раз.
+
+// function repeatStr(str, n) { 
+//     let newStr = ''
+//     for (let i = 0; i < n; i += 1) {
+//         newStr += str
+//     }
+//     return newStr
+// }
+
+// // document.writeln(repeatStr('Hello!', 3)); // Hello!Hello!Hello!
+// console.log(repeatStr('Hello!', 3));
+
+
+// 13
+
+// Напишите функцию find_longest_word(str), которая принимает
+// строку в качестве параметра и находит самое длинное слово в
+// строке.
+
+// function find_longest_word(str) {
+//     let arr = str.split(' ')
+//     let str2 = arr[0]
+//     for (let i = 1; i < arr.length; i += 1) {
+//         if (arr[i].length > str2.length) {
+//              str2 = arr[i]
+//         }
+//     }
+//     return str2
+// }
+// console.log(find_longest_word('Web Development Tutorial'));
+// document.writeln(find_longest_word('Web Development Tutorial')); // "Development"
+
+
+// 14
+
+// Напишите функцию JavaScript, которая переворачивает число.
+
+// function reverse_a_number(n) {
+//     n = String(n)
+//     let arr = n.split('').reverse().join('')
+//      return arr
+
+// };
+// console.log(reverse_a_number(258961));
+// document.writeln(reverse_a_number(258961)); // 169852
+
+// 15
+
+// Напишите функцию JavaScript, которая возвращает переданную
+// строку с буквами в алфавитном порядке.
+// Пример строки: 'alphabetical'.
+// Ожидаемый результат: 'aaabcehillpt'
+
+// function alphabet_order(str) {
+//     let arr = str.split('').sort().join('')
+//     return arr
+// }
+// console.log(alphabet_order("alphabetical"));
+// document.writeln(alphabet_order("alphabetical")); // "aaabcehillpt"
+
+
+
+// 16
+
+// Напишите функцию matrix(n), которая возвращает единичную
+// матрицу n строк и n столбцов.
+// Пример вывода:
+// 1 0 0 0
+// 0 1 0 0
+// 0 0 1 0
+// 0 0 0 1
+
+// function matrix(n) {
+//     let arr = []
+//     for (let i = 0; i < n; i += 1) {
+//         for (let j = 0; j < n; j += 1){
+//             if (i === j) {
+//                 arr.push(1)
+//             } else {
+//                 arr.push(0)
+//             }
+//         }
+//         arr.push('\n')
+//     }
+//   return arr.join('')
+// };
+
+
+// console.log(matrix(4));
+
+
+// 17
+
+// Напишите функцию insensitive_search(str1, str2),
+// которая осуществляет поиск подстроки str2 в
+// строкеstr1 без учёта регистра символов.
+
+// function insensitive_search(str1, str2) {
+//     // let arr = str1.toLowerCase().split(' ').includes(str2.toLowerCase())
+//     // return arr
+//     // // 2ий вариант
+//     let arr = str1.split(' ')
+//     for (let i = 0; i < arr.length; i += 1) {
+//         if (arr[i].toLowerCase() === str2.toLowerCase()) {
+//             return true
+//         } 
+//     }
+//     return false
+// };
+// console.log(insensitive_search('Изучаю JavaScript', 'javascript'));
+// document.writeln(insensitive_search('Изучаю JavaScript', 'javascript')); 
+// // Соответствует 
+// document.writeln(insensitive_search('Изучаю JavaScript', 'javascriptS'));
+// // Не соответствует
+
+
+
+// 18
+
+// Напишите функцию path(pathname), которая вовращает имя
+// файла(подстрока после последнего символа "\" ) из полного 
+// пути к файлу.
+
+// var pathname = "/home/user/dir/file.txt";
+
+// function path(pathname) { 
+// //    let arr = pathname.split('/').slice(-1)
+//     let arr = pathname.split('/').pop()
+//    return arr
+// };
+// console.log(path(pathname));
+// document.writeln(path(pathname)); // file.txt
+
+

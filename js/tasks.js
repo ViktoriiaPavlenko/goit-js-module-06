@@ -98,9 +98,10 @@
 //     let number2 = prompt('Enter your second number')
 //     let number3 = prompt('Enter your third number')
     
-//     if (Number.isInteger(number1) && Number.isInteger(number2) && Number.isInteger(number3)) {
-//       return Math.max(number1, number2, number3)
-//     }
+//     // if (Number.isInteger(number1) && Number.isInteger(number2) && Number.isInteger(number3)) {
+//     //   return Math.max(number1, number2, number3)
+//     // }
+//     return Math.max(number1, number2, number3)
 // }
 // console.log(getTheBiggestNumber());
 
@@ -151,7 +152,7 @@
 // var computerChoice = Math.random();
 
 // let rock = "rock"
-//     let paper = "paper"
+// let paper = "paper"
 // let scissors = "scissors"
     
 // var compchoice = function ()
@@ -390,7 +391,8 @@
 //   var i = arr.length / 2;
 //   return i % 1 == 0 ? (arr[i - 1] + arr[i]) / 2 : arr[Math.floor(i)];
 // }
-// console.log(median([3, 6, 10, 16, 20, 99]) );
+// console.log(median([3, 6, 10, 15, 20, 99]));
+// console.log(median([1, 2, 3, 4, 5]));
 
 // 2й вариант
 // function median(arr){
@@ -405,4 +407,5 @@
 //     }
 //     return result
 // }
-// console.log(median([1, 2, 3, 4, 5]) );
+// console.log(median([1, 2, 3, 4, 5]));
+// console.log(median([3, 6, 10, 15, 20, 99]));
