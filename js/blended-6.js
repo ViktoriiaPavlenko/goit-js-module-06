@@ -175,11 +175,12 @@
 // ];
 
 // function printItem (arr) {
-//   arr.forEach(element => {
-//       element.forEach(item => {
-//           console.log(item);
-//       })
-//   })
+//     arr.forEach((element, index) => {
+//         console.log(`row ${index}`);
+//         element.forEach((item) => {
+//             console.log(item);
+//         })
+//     });
 // }
 // console.log(printItem (arr3));
 
