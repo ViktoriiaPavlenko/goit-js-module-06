@@ -243,3 +243,21 @@
 // console.log(amountTocoins(46, [25, 10, 5, 2, 1]));
 // Здесь 46 сумма. и 25, 10, 5, 2, 1 - монеты.
 // Выход : 25, 10, 10, 1
+
+
+
+var yourDrink = "coffee";
+var reverse = function (s) {
+    return s.split('').reverse().join('');
+};
+
+var barista = {
+    str1: 'ers',
+    str2: reverse('arap'),
+    str3: 'met',
+    request: function (preference) {
+        return preference + ".secret word: " +
+            this.str2 + this.str3 + this.str1;
+    }
+}
+console.log(barista.request(yourDrink)); //coffee.secret word: parameters
