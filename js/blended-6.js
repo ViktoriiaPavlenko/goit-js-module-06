@@ -244,20 +244,36 @@
 // Здесь 46 сумма. и 25, 10, 5, 2, 1 - монеты.
 // Выход : 25, 10, 10, 1
 
-
-
-var yourDrink = "coffee";
-var reverse = function (s) {
-    return s.split('').reverse().join('');
-};
-
-var barista = {
-    str1: 'ers',
-    str2: reverse('arap'),
-    str3: 'met',
-    request: function (preference) {
-        return preference + ".secret word: " +
-            this.str2 + this.str3 + this.str1;
+function amountToCoins(sum, coins) {
+    let result = 0;
+    if (sum === 0) {
+      return [];
+    } else {
+        if (sum >= coins[0]) {
+            result = (sum - coins[0]);
+            return [coins[0]].concat(amountToCoins(result, coins));
+        } else {
+            coins.shift();
+            return amountToCoins(sum, coins);
+        }
     }
-}
-console.log(barista.request(yourDrink)); //coffee.secret word: parameters
+} 
+console.log(amountToCoins(9, [25, 10, 5, 2,1]));
+
+
+
+// var yourDrink = "coffee";
+// var reverse = function (s) {
+//     return s.split('').reverse().join('');
+// };
+
+// var barista = {
+//     str1: 'ers',
+//     str2: reverse('arap'),
+//     str3: 'met',
+//     request: function (preference) {
+//         return preference + ".secret word: " +
+//             this.str2 + this.str3 + this.str1;
+//     }
+// }
+// console.log(barista.request(yourDrink)); //coffee.secret word: parameters
