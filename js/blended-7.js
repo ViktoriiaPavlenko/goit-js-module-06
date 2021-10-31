@@ -174,8 +174,6 @@ function addItem() {
     }).join('')
     
     refs.myUL.innerHTML = markup
-
-    // console.log(array);
 }
 
 
