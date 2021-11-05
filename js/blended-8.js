@@ -3,27 +3,30 @@
 // const text = document.querySelector('#text')
 
 // btn.addEventListener('click', onBtnClick)
-// // function onBtnClick() {
-// //     text.style.display = "none"
-// // }
+// function onBtnClick() {
+//     text.style.display = "none"
+// }
 // function onBtnClick() {
 //     text.classList.add("hidden")
 // }
 
 
 // 2
+// напишите код, как получить 
+// елемент <div>, <ul>, второй <li>
 // const container = document.getElementsByTagName('div')
 // const container2 = document.querySelectorAll('div')
 // console.log(container);
 // console.log(container2);
 
 // const list = document.getElementsByClassName('list')
-// // console.log(list);
+// console.log(list);
 // console.dir(list[0]);
 // console.log(list[0].children[1]);
 
 
 // 3
+// напишите код, как получить 
 // Таблицу с id="age-table".
 // Все элементы label внутри этой таблицы (их три).
 // Первый td в этой таблице (со словом «Age»).

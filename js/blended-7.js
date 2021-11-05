@@ -139,7 +139,7 @@ const refs = {
 }
 
 refs.addBtn.addEventListener('click', addString);
-refs.myUL.addEventListener('click', classCheck)
+refs.myUL.addEventListener('click', classСheck)
 
 function addString(e) {
     if (!refs.input.value) return
@@ -176,28 +176,18 @@ function addItem() {
     refs.myUL.innerHTML = markup
 }
 
-
-function classCheck({ target }) {
+function classСheck({ target }) {
+    let array = getDataLocaleStorage()
+    let idx
     if (target.classList.contains('btn-remove')) {
-        removeData(target)
+        idx = Number(target.parentElement.getAttribute('data-index'))
+        array.splice(idx, 1)
     } else if (target.tagName === 'LI') {
-        updateCheckedEl(target)
+        idx = Number(target.getAttribute('data-index'))
+        array[idx].result = !array[idx].result
     }
-    
+    localStorage.setItem('data', JSON.stringify(array))
+
     addItem()
 }
 addItem()
-
-function removeData(target) {
-    const idx = (target.parentElement.getAttribute('data-index'))
-    const array = getDataLocaleStorage()
-    array.splice(idx, 1)
-    localStorage.setItem('data', JSON.stringify(array))
-}
-
-function updateCheckedEl(target) {
-   const idx = Number(target.getAttribute('data-index'))
-    const array = getDataLocaleStorage()
-    array[idx].result = !array[idx].result
-    localStorage.setItem('data', JSON.stringify(array))
-}

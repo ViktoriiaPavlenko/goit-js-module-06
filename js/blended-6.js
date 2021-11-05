@@ -32,7 +32,7 @@
 //     }
 //     return false;
 // }
-// console.log(checkNumber(31));
+// console.log(checkNumber(20));
 
 // 3
 //Дан массив с числами.
@@ -244,21 +244,21 @@
 // Здесь 46 сумма. и 25, 10, 5, 2, 1 - монеты.
 // Выход : 25, 10, 10, 1
 
-function amountToCoins(sum, coins) {
-    let result = 0;
-    if (sum === 0) {
-      return [];
-    } else {
-        if (sum >= coins[0]) {
-            result = (sum - coins[0]);
-            return [coins[0]].concat(amountToCoins(result, coins));
-        } else {
-            coins.shift();
-            return amountToCoins(sum, coins);
-        }
-    }
-} 
-console.log(amountToCoins(9, [25, 10, 5, 2,1]));
+// function amountToCoins(sum, coins) {
+//     let result = 0;
+//     if (sum === 0) {
+//       return [];
+//     } else {
+//         if (sum >= coins[0]) {
+//             result = (sum - coins[0]);
+//             return [coins[0]].concat(amountToCoins(result, coins));
+//         } else {
+//             coins.shift();
+//             return amountToCoins(sum, coins);
+//         }
+//     }
+// } 
+// console.log(amountToCoins(9, [25, 10, 5, 2,1]));
 
 
 
